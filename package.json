@@ -1,0 +1,31 @@
+{
+  "name": "animation-toolbox",
+  "version": "1.0.0",
+  "description": "Just a litle set of animation functions using WebAnimation API",
+  "main": "index.js",
+  "dependencies": {
+    "nanoanimation": "^2.0.4",
+    "nanoassert": "^1.1.0"
+  },
+  "repository": "YerkoPalma/animation-toolbox",
+  "devDependencies": {
+    "bel": "^5.1.5",
+    "budo": "^11.0.1",
+    "nanochoo": "^6.6.3",
+    "sheetify": "^7.1.0",
+    "tachyons": "^4.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "budo -p 8080 -H 0.0.0.0 example.js -- -t sheetify"
+  },
+  "keywords": [
+    "webanimation",
+    "web",
+    "animation",
+    "keyframe",
+    "toolbox"
+  ],
+  "author": "Yerko Palma",
+  "license": "MIT"
+}
