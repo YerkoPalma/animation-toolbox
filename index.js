@@ -156,7 +156,25 @@ function shake (el, repeat, cb) {
   return animate(el, cb)
 }
 
+function playAll() {
+  var animations = []
+  var finishedAnimations = 0
+  var totalAnimations = arguments.length - 1
+  var cb = arguments[arguments.length - 1]
+  for (var i = 0; i < arguments.length - 1; i++) {
+    animations.push(arguments[i])
+    animations[i].onfinish = () => {
+      finishedAnimations++
+      if (finishedAnimations === totalAnimations) cb()
+    }
+  }
+  for (var i = 0; i < animations.length; i++) {
+    animations[i].play()
+  }
+}
+
 module.exports = {
+  playAll,
   fade,
   fadeIn,
   fadeOut,
