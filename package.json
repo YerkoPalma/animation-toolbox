@@ -4,13 +4,13 @@
   "description": "Just a litle set of animation functions using WebAnimation API",
   "main": "index.js",
   "dependencies": {
-    "nanoanimation": "^2.0.4",
+    "nanoanimation": "^2.1.0",
     "nanoassert": "^1.1.0"
   },
   "repository": "YerkoPalma/animation-toolbox",
   "devDependencies": {
-    "bel": "^5.1.5",
-    "budo": "^11.0.1",
+    "bel": "^5.1.6",
+    "budo": "^11.1.0",
     "nanochoo": "^6.6.3",
     "sheetify": "^7.1.0",
     "tachyons": "^4.9.1"

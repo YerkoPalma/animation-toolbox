@@ -17,7 +17,7 @@ function main (state, emit) {
         <div class="mw9 center ph3-ns">
           ${Object.keys(animations).filter(anim => blacklist.indexOf(anim) === -1).map(anim => {
             return html`
-              <div class="fl w-20 pa2" onclick=${e => (animations[anim](e.currentTarget))}>
+              <div class="fl w-20 pa2" onclick=${e => (animations[anim](e.currentTarget).play())}>
                 <div class="outline bg-moon-gray tc pv4"><code>${anim}</code></div>
               </div>
             `

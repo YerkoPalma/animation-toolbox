@@ -16,7 +16,7 @@ function fade (el, from, to, delay, cb) {
   var animate = animation({
     opacity: [ from, to ]
   }, delay)
-  animate(el, cb)
+  return animate(el, cb)
 }
 
 function fadeIn (el, delay, cb) {
@@ -42,7 +42,7 @@ function move (el, axis, from, to, delay, cb) {
     { transform: `translate${axis.toUpperCase()}(${from})`},
     { transform: `translate${axis.toUpperCase()}(${to})`}
   ], delay)
-  animate(el, cb)
+  return animate(el, cb)
 }
 
 function moveRight (el, from, to, delay, cb) {
@@ -58,7 +58,7 @@ function moveRight (el, from, to, delay, cb) {
     delay = to
     to = null
   }
-  move(el, 'x', from || '0%', to || '100%', delay, cb)
+  return move(el, 'x', from || '0%', to || '100%', delay, cb)
 }
 
 function moveDown (el, from, to, delay, cb) {
@@ -74,7 +74,7 @@ function moveDown (el, from, to, delay, cb) {
     delay = to
     to = null
   }
-  move(el, 'y', from || '0%', to || '100%', delay, cb)
+  return move(el, 'y', from || '0%', to || '100%', delay, cb)
 }
 
 function moveLeft (el, from, to, delay, cb) {
@@ -90,7 +90,7 @@ function moveLeft (el, from, to, delay, cb) {
     delay = to
     to = null
   }
-  move(el, 'x', from || '0%', `-${to || '100%'}`, delay, cb)
+  return move(el, 'x', from || '0%', `-${to || '100%'}`, delay, cb)
 }
 
 function moveUp (el, from, to, delay, cb) {
@@ -106,7 +106,7 @@ function moveUp (el, from, to, delay, cb) {
     delay = to
     to = null
   }
-  move(el, 'y', from || '0%', `-${to || '100%'}`, delay, cb)
+  return move(el, 'y', from || '0%', `-${to || '100%'}`, delay, cb)
 }
 
 function bounce (el, loop, cb) {
@@ -130,7 +130,7 @@ function bounce (el, loop, cb) {
     iterations: loop,
     easing: 'ease-in-out'
   })
-  animate(el, cb)
+  return animate(el, cb)
 }
 
 function shake (el, repeat, cb) {
@@ -153,7 +153,7 @@ function shake (el, repeat, cb) {
     duration: 300,
     iterations: repeat ? Infinity : 3
   })
-  animate(el, cb)
+  return animate(el, cb)
 }
 
 module.exports = {
