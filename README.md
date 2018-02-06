@@ -10,18 +10,35 @@ var { fadeIn } = require('animation-toolbox')
 // to require all just do
 // var animations = require('animation-toolbox')
 
-fadeIn(el, () => {
+var anim = fadeIn(el, () => {
   console.log('done')
 })
+anim.play()
 ```
 
 ## API
 
-This modules exports an object where every own property is an animation, and 
-every animation is a function that returns a WebAnimation instance. Every 
-animation has its own arguments, the only common argument is the element to 
-which to apply the animation (always the first argument). Currently implemented 
-animations are:
+This modules exports an object where every own property is an animation, 
+except by the `playAll`function, and every animation is a function that returns 
+a WebAnimation instance. Every animation has its own arguments, the only common 
+argument is the element to which to apply the animation (always the first 
+argument). 
+
+### `playAll(...animations, cb)`
+This function take some animations, play them all simultaneously, and when all 
+of them has finished, runs a callback. For example,
+
+```js
+var { playAll, moveDown, fadeOut } = require('animation-toolbox')
+
+playAll(
+  moveDown(el),
+  fadeOut(el),
+  () => {
+    alert('animation finished')
+  }
+)
+```
 
 ### `fade(el, from, to [, delay] [, cb])`
 Fade the opacity between `from` and `to`. Required arguments are `el`, the 
