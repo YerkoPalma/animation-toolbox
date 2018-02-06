@@ -1,6 +1,6 @@
 {
   "name": "animation-toolbox",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Just a litle set of animation functions using WebAnimation API",
   "main": "index.js",
   "dependencies": {
