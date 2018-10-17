@@ -1,5 +1,5 @@
-var animation = require('nanoanimation')
-var assert = require('nanoassert')
+import animation from 'nanoanimation'
+import assert from 'nanoassert'
 
 function fade (el, from, to, delay, cb) {
   assert.ok(el)
@@ -173,7 +173,7 @@ function playAll() {
   }
 }
 
-module.exports = {
+export default {
   playAll,
   fade,
   fadeIn,
@@ -184,8 +184,5 @@ module.exports = {
   moveDown,
   moveUp,
   bounce,
-  shake/* ,
-  grow,
-  shrink,
-  blink */
+  shake
 }

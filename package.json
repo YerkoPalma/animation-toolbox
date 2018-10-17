@@ -2,7 +2,9 @@
   "name": "animation-toolbox",
   "version": "2.1.0",
   "description": "Just a litle set of animation functions using WebAnimation API",
-  "main": "index.js",
+  "source": "index.js",
+  "main": "dist/animation-toolbox.js",
+  "module": "dist/animation-toolbox.mjs",
   "dependencies": {
     "nanoanimation": "^2.1.0",
     "nanoassert": "^1.1.0"
@@ -11,13 +13,17 @@
   "devDependencies": {
     "bel": "^5.1.6",
     "budo": "^11.1.0",
+    "microbundle": "^0.6.0",
     "nanochoo": "^6.6.3",
     "sheetify": "^7.1.0",
     "tachyons": "^4.9.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "budo -p 8080 -H 0.0.0.0 example.js -- -t sheetify"
+    "start": "budo -p 8080 -H 0.0.0.0 example.js -- -t sheetify",
+    "build": "microbundle -o dist -f cjs,es",
+    "prepublishOnly": "npm run build",
+    "pretest": "npm run build"
   },
   "keywords": [
     "webanimation",
